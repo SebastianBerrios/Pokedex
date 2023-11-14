@@ -1,0 +1,33 @@
+.input-container {
+    position: relative;
+    display: flex;
+    margin-top: 15px;
+
+    & .searchForName {
+        width: 100%;
+
+        @include breakpoint(768px) {
+            width: 250px;
+        }
+
+        height: 35px;
+        padding: 0 20px;
+        font-size: 14px;
+        border: 1px solid silver;
+        border-radius: 30px;
+    }
+
+    & img {
+        position: absolute;
+        left: 88%;
+
+        @include breakpoint(768px) {
+            left: 205px;
+        }
+        
+        top: 50%;
+        transform: translateY(-50%);
+        width: 55px;
+        height: auto;
+    }
+}

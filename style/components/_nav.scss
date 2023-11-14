@@ -1,0 +1,17 @@
+nav {
+  background-color: #5f84a2;
+  padding: 15px 0;
+
+  & img {
+    display: flex;
+    margin: 0 auto;
+    padding: 10px;
+  }
+
+  & .nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+}

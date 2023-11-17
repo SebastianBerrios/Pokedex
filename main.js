@@ -8,24 +8,26 @@ async function fetchData(url) {
 
 const loadPokemon = async (url) => {
   try {
-    const infoPokemon = {};
+    const requests = [];
 
     for (let i = 1; i <= 151; i++) {
-      infoPokemon[i] = await fetchData(`${url}/${i}`);
+      requests.push(fetchData(`${url}/${i}`));
     }
 
-    return infoPokemon;
+    const responses = await Promise.all(requests);
+
+    return responses;
   } catch (error) {
     console.error(error);
   }
 };
-
+    
 const createCardPokemon = async (url) => {
   try {
     const infoPokemon = await loadPokemon(url);
     const cardsPokemon = document.querySelector(".cardsPokemon");
 
-    for (let i = 1; i <= 151; i++) {
+    for (let i = 0; i <= 150; i++) {
       const divCard = document.createElement("div");
       divCard.classList.add("card");
       const divInfoPokemon = document.createElement("div");
